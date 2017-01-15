@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 8080);
 app.use('/img', express.static(__dirname + '/public/img'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect(dbUrl);
+//mongoose.connect(dbUrl);
 
 db.on('error', function(err) {
 	console.log(err);
