@@ -40,18 +40,18 @@ app.post('/login', function(req, res){
 });
 
 //Test model
-var chris = new User({
-	name: 'Chris ABCDEF',
-	username: 'sevilla3',
-	password: 'password'
-});
+// var chris = new User({
+// 	name: 'Chris ABCDEF',
+// 	username: 'sevilla3',
+// 	password: 'password'
+// });
 
-app.get('/save', function(req, res){
-	chris.save(function(err){
+// app.get('/save', function(req, res){
+// 	chris.save(function(err){
 
-	});
-	res.send('OK');
-});
+// 	});
+// 	res.send('OK');
+// });
 
 
 http.createServer(app).listen(app.get('port'), function(){
