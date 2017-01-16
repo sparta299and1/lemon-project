@@ -9,7 +9,7 @@ var dbUrl = 'mongodb://localhost/lemon';
 
 var User = require('./models/user');
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 app.use('/img', express.static(__dirname + '/public/img'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,13 +54,10 @@ app.post('/login', function(req, res){
 // });
 
 
-http.createServer(app).listen(app.get('port'), function(){
-	console.log('Running...');
-});
-
-// var server = app.listen(3000, function () {
-//   var host = server.address().address;
-//   var port = server.address().port;
-
-//   console.log('Example app listening at http://%s:%s', host, port);
+// http.createServer(app).listen(app.get('port'), function(){
+// 	console.log('Running...');
 // });
+
+var server = app.listen(app.get('port'), function () {
+  console.log('Running at port:'+ app.get('port') +'...');
+});
