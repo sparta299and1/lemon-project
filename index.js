@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 80);
 app.use('/img', express.static(__dirname + '/public/img'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//mongoose.connect(dbUrl);
+mongoose.connect(dbUrl);
 
 db.on('error', function(err) {
 	console.log(err);
@@ -39,19 +39,19 @@ app.post('/login', function(req, res){
 	res.send(req.body.username);
 });
 
-//Test model
-// var chris = new User({
-// 	name: 'Chris ABCDEF',
-// 	username: 'sevilla3',
-// 	password: 'password'
-// });
+Test model
+var chris = new User({
+	name: 'Chris ABCDEF',
+	username: 'sevilla3',
+	password: 'password'
+});
 
-// app.get('/save', function(req, res){
-// 	chris.save(function(err){
+app.get('/save', function(req, res){
+	chris.save(function(err){
 
-// 	});
-// 	res.send('OK');
-// });
+	});
+	res.send('OK');
+});
 
 
 // http.createServer(app).listen(app.get('port'), function(){
